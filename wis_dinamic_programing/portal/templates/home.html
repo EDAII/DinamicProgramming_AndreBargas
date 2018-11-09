@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>wis_dinamic</title>
+    <style media="screen">
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      .half{
+        width: 40%;
+        float: left;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weighted Interval Scheduling</h1>
+    <div class="half">
+      <h3>Todas as tarefas:</h3>
+      <table>
+        <tr>
+          <th>início da atividade</th>
+          <th>fim da atividade</th>
+          <th>valor</th>
+        </tr>
+        {% for i in activities %}
+        <tr>
+          <th>{{ i.beginTime }}</th>
+          <th>{{ i.finishTime }}</th>
+          <th>{{ i.value }}</th>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="half">
+      <h3>Melhor combinação:</h3>
+      <table>
+        <tr>
+          <th>início da atividade</th>
+          <th>fim da atividade</th>
+          <th>valor</th>
+        </tr>
+        {% for i in schedual %}
+        <tr>
+          <th>{{ i.beginTime }}</th>
+          <th>{{ i.finishTime }}</th>
+          <th>{{ i.value }}</th>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
